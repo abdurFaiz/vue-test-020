@@ -150,13 +150,6 @@ function decreaseQuantity() {
   if (quantity.value > 1) quantity.value--
 }
 
-function handleAddToCart() {
-  if (product.value) {
-    cartStore.addToCart(product.value, quantity.value)
-    alert('Product added to cart!')
-  }
-}
-
 function handleBuyNow() {
   if (product.value) {
     cartStore.addToCart(product.value, quantity.value)
