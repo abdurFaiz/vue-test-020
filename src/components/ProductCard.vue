@@ -2,7 +2,7 @@
   <div class="bg-white rounded-lg overflow-hidden duration-300 hover:cursor-pointer"
     :class="{ 'opacity-75': !inStock }">
     <div class="relative ">
-      <img :src="product.thumbnail" loading="lazy" fetchpriority="high" :alt="product.title" class="w-full h-72 object-cover hover:scale-110 transition-all duration-300" @error="handleImageError"
+      <img :src="product.thumbnail" loading="eager" rel="preload" fetchpriority="high" :alt="product.title" class="w-full h-72 object-cover hover:scale-110 transition-all duration-300" @error="handleImageError"
         width="200" height="200" />
       <div v-if="showDiscount && product.discountPercentage > 0"
         class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-md text-sm font-bold">
@@ -14,9 +14,9 @@
     </div>
 
     <div class="p-4">
-      <h2 class="text-lg font-medium text-orange-700 mb-2 truncate">
+      <h1 class="text-lg font-medium text-orange-700 mb-2 truncate">
         {{ product.title }}
-      </h2>
+      </h1>
 
       <p v-if="showDescription" class="text-gray-600 text-sm mb-3 line-clamp-2">
         {{ product.description }}
